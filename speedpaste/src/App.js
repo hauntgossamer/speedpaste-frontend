@@ -17,8 +17,14 @@ function App() {
             <Route exact path="/">
                 <h2> Are you copying or pasting?</h2>
                 <div className="container">
-                    <button className="column col-4 btn btn-primary" onClick={() => window.location = "/copying"}>Copying</button>
-                    <button className="column col-4 btn btn-primary" onClick={() => window.location = "/pasting"}>Pasting</button>
+                    <div style={{display: "flex", justifyContent: "space-evenly"}}>
+                    <i class="fas fa-copy fa-6x"></i><i class="fas fa-paste fa-6x"></i>
+                    </div>
+                    <div>
+                        <button className="column col-4 btn btn-primary" onClick={() => window.location = "/copying"}>Copying</button>
+                        <button className="column col-4 btn btn-primary" onClick={() => window.location = "/pasting"}>Pasting</button>
+                    </div>
+                
                 </div>
             </Route>
             <Route exact path="/pasting">
