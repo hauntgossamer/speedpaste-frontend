@@ -1,0 +1,1 @@
+Welcome to SpeedPaste! My attempt at the fastest most lightweight pastebin ever! This is the frontend, you can find the backend [here](https://github.com/darkwolfxj/speedpaste)
