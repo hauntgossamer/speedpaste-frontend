@@ -21,8 +21,8 @@ function App() {
                     <i class="fas fa-copy fa-6x"></i><i class="fas fa-paste fa-6x"></i>
                     </div>
                     <div>
-                        <button className="column col-4 btn btn-primary" onClick={() => window.location = "/copying"}>Copying</button>
-                        <button className="column col-4 btn btn-primary" onClick={() => window.location = "/pasting"}>Pasting</button>
+                        <button style={{marginTop: "2%"}} className="column col-4 btn btn-primary" onClick={() => window.location = "/copying"}>Copying</button>
+                        <button style={{marginTop: "2%"}} className="column col-4 btn btn-primary" onClick={() => window.location = "/pasting"}>Pasting</button>
                     </div>
                 
                 </div>
