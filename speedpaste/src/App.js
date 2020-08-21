@@ -32,6 +32,7 @@ function App() {
                     <form onSubmit={e => {
                             e.preventDefault();
                             setPastedText(text);
+                            setLoading(true);
                             axios
                                 .post("https://speedpaste.herokuapp.com/pasting", { text: `${pastedText}` })
                                 .then(res => {
