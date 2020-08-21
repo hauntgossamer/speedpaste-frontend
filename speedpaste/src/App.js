@@ -35,7 +35,7 @@ function App() {
                             setLoading(true);
                             console.log(text)
                             axios
-                                .post("https://speedpaste.herokuapp.com/pasting", { text: `${pastedText}` })
+                                .post("http://localhost:5000/pasting", {text})
                                 .then(res => {
                                     setToken(res.data.token);
                                     setLink(res.data.link);
@@ -48,7 +48,7 @@ function App() {
                         <div><img src="https://i.imgur.com/vOpj1aC.gif" alt="loading"/></div> : 
                         <div style={{display: "flex", flexDirection: "column", alignItems: "center"}}>
                             <p>Here is your token and shareable link!</p>
-                            <input style={{width: "50%"}} type="text" value={token} disabled />
+                            <textarea className="column col-8" style={{width: "50%"}} type="text" value={token} cols={30} rows={8} disabled />
                             <a href={link}>{link}</a>
                         </div>
                     
@@ -61,7 +61,7 @@ function App() {
                         window.location = `/copying/${token}`
                     }} style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
                     <p><i class="fas fa-lock fa-10x"></i></p>
-                    <input placeHolder="Paste your token, here!" type="text" id="token" onChange={() => setToken(document.getElementById("token").value)} />
+                    <textarea className="column col-8" placeHolder="Paste your token, here!" type="text" id="token" cols="30" rows="8" onChange={() => setToken(document.getElementById("token").value)} />
                     <button className="btn btn-primary">Submit</button>
                 </form>
                     <button onClick={() =>  console.log(token)}>Check Value</button>

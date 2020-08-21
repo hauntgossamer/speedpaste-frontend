@@ -4,9 +4,11 @@ import axios from "axios";
 export default function Copy({match}) {
     const [text,  setText] = useState("")
     useEffect(() => {
+        const token = window.location.href.split('/').slice(4)[0]
         axios
-            .get(`https://speedpaste.herokuapp.com/copy/${match.params.token}`)
+            .get(`http://localhost:5000/copy/${token}`)
             .then(res => setText(res.data.text))
+            .catch(err => console.log(err))
     },[match.params])
     return (
         text ?     
