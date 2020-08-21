@@ -4,7 +4,8 @@ import axios from "axios";
 export default function Copy({match}) {
     const [text,  setText] = useState("")
     useEffect(() => {
-        const token = window.location.href.split('/').slice(4)[0]
+        const token = window.location.href.split('/').pop()
+        console.log(token)
         axios
             .get(`https://speedpaste.herokuapp.com/copy/${token}`)
             .then(res => setText(res.data.text))
