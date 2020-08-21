@@ -59,9 +59,10 @@ function App() {
                         window.location = `/copying/${token}`
                     }} style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
                     <p><i class="fas fa-lock fa-10x"></i></p>
-                    <input placeHolder="Paste your token, here!" type="text" id="token" onChange={() => setToken(document.getElementById("token").value)} />
+                    <input placeHolder="Paste your link, here!" type="text" id="token" onChange={() => setToken(document.getElementById("token").value)} />
                     <button className="btn btn-primary">Submit</button>
                 </form>
+                    <button onClick={() =>  console.log(token)}>Check Value</button>
                 <h2>Trying to paste some text? Click <a href="/pasting">here!</a></h2>
             </Route>
             <Route path="/copying/:token" component={Copy} />

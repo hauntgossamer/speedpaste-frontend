@@ -15,7 +15,7 @@ export default function Copy({match}) {
                 <h2>Trying to paste some text? Click <a href="/pasting">here!</a></h2>
             </div> :
             <div>
-                <i class="fas fa-unlink fa-10x"></i>
+                <i className="fas fa-unlink fa-10x"></i>
                 <h2>
                     You entered or navigated to an invalid token!
                 </h2>
