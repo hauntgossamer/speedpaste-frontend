@@ -33,7 +33,6 @@ function App() {
                             e.preventDefault();
                             setPastedText(text);
                             setLoading(true);
-                            console.log(text)
                             axios
                                 .post("https://speedpaste.herokuapp.com/pasting", {text})
                                 .then(res => {
@@ -64,7 +63,6 @@ function App() {
                     <textarea className="column col-8" placeHolder="Paste your token, here!" type="text" id="token" cols="30" rows="8" onChange={() => setToken(document.getElementById("token").value)} />
                     <button className="btn btn-primary">Submit</button>
                 </form>
-                    <button onClick={() =>  console.log(token)}>Check Value</button>
                 <h2>Trying to paste some text? Click <a href="/pasting">here!</a></h2>
             </Route>
             <Route path="/copying/:token" component={Copy} />
