@@ -35,7 +35,7 @@ function App() {
                             setLoading(true);
                             console.log(text)
                             axios
-                                .post("http://localhost:5000/pasting", {text})
+                                .post("https://speedpaste.herokuapp.com/pasting", {text})
                                 .then(res => {
                                     setToken(res.data.token);
                                     setLink(res.data.link);
