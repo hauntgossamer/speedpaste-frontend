@@ -6,7 +6,7 @@ export default function Copy({match}) {
     useEffect(() => {
         const token = window.location.href.split('/').slice(4)[0]
         axios
-            .get(`http://localhost:5000/copy/${token}`)
+            .get(`https://speedpaste.herokuapp.com/copy/${token}`)
             .then(res => setText(res.data.text))
             .catch(err => console.log(err))
     },[match.params])
