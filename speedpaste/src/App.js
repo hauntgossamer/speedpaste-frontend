@@ -33,6 +33,7 @@ function App() {
                             e.preventDefault();
                             setPastedText(text);
                             setLoading(true);
+                            console.log(text)
                             axios
                                 .post("https://speedpaste.herokuapp.com/pasting", { text: `${pastedText}` })
                                 .then(res => {
@@ -41,7 +42,7 @@ function App() {
                                     setLoading(false);
                                 })
                         }} style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
-                        <textarea name="pastedtext" id="pastedtext" cols="30" rows="8" placeholder="Paste your text here!" className="column col-8" onChange={() => setText(document.getElementById("pastedtext").value)}></textarea>
+                        <textarea name="pastedtext" id="pastedtext" cols="30" rows="8" placeholder="Paste your text here!" value={text} className="column col-8" onChange={() => setText(document.getElementById("pastedtext").value)}></textarea>
                         <button className="btn btn-primary">Submit</button>
                     </form> : loading ? 
                         <div><img src="https://i.imgur.com/vOpj1aC.gif" alt="loading"/></div> : 
@@ -60,7 +61,7 @@ function App() {
                         window.location = `/copying/${token}`
                     }} style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
                     <p><i class="fas fa-lock fa-10x"></i></p>
-                    <input placeHolder="Paste your link, here!" type="text" id="token" onChange={() => setToken(document.getElementById("token").value)} />
+                    <input placeHolder="Paste your token, here!" type="text" id="token" onChange={() => setToken(document.getElementById("token").value)} />
                     <button className="btn btn-primary">Submit</button>
                 </form>
                     <button onClick={() =>  console.log(token)}>Check Value</button>
