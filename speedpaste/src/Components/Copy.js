@@ -12,11 +12,12 @@ export default function Copy({match}) {
             .catch(err => console.log(err))
     },[match.params])
     return (
-        text ?     
+        text && text !== "does not exist" ?     
             <div className="container" style={{ textAlign: "center", display: "flex", flexDirection: "column", alignItems: "center" }}>
                 <textarea className="columns col-8" name="tobecopied" id="tobecopied" cols="30" rows="8" value={text} disabled></textarea>
                 <h2>Trying to paste some text? Click <a href="/pasting">here!</a></h2>
-            </div> :
+            </div> : text !== "does not exist" ?
+            <div><img src="https://i.imgur.com/vOpj1aC.gif" alt="loading"/></div> :
             <div>
                 <i className="fas fa-unlink fa-10x"></i>
                 <h2>

@@ -60,8 +60,8 @@ function App() {
                         e.preventDefault();
                         window.location = `/copying/${token}`
                     }} style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
-                    <p><i class="fas fa-lock fa-10x"></i></p>
-                    <textarea className="column col-8" placeHolder="Paste your token, here!" type="text" id="token" cols="30" rows="8" onChange={() => setToken(document.getElementById("token").value)} />
+                    <p><i className="fas fa-lock fa-10x"></i></p>
+                    <textarea className="column col-8" placeholder="Paste your token, here!" type="text" id="token" cols="30" rows="8" onChange={() => setToken(document.getElementById("token").value)} />
                     <button className="btn btn-primary">Submit</button>
                 </form>
                 <h2>Trying to paste some text? Click <a href="/pasting">here!</a></h2>
