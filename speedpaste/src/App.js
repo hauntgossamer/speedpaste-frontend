@@ -4,7 +4,7 @@ import axios from "axios";
 
 import './Styles/App.css';
 import Copy from "./Components/Copy";
-
+import walloftext from "./wall-of-text.png";
 function App() {
     const [pastedText, setPastedText] = useState("");
     const [text, setText] = useState("");
@@ -13,6 +13,7 @@ function App() {
     const [link, setLink] = useState("")
     return (
         <div style={{textAlign: "center"}}>
+            <img className="background" src={walloftext} alt="wall of text in the background"/>
             <h1>Welcome to SpeedPaste <i className="icon icon-2x icon-copy"></i></h1>
             <Route exact path="/">
                 <h2> Are you copying or pasting?</h2>
