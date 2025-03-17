@@ -7,7 +7,7 @@ export default function Copy({match}) {
         const token = window.location.href.split('/').pop()
         console.log(token)
         axios
-            .get(`https://speedpaste.herokuapp.com/copy/${token}`)
+            .get(`https://speedpaste-backend.netlify.app/copy/${token}`)
             .then(res => setText(res.data.text))
             .catch(err => console.log(err))
     },[match.params])
