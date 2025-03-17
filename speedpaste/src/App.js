@@ -35,7 +35,7 @@ function App() {
                             setPastedText(text);
                             setLoading(true);
                             axios
-                                .post("https://speedpaste.herokuapp.com/pasting", {text})
+                                .post("https://speedpaste-backend.netlify.app/pasting", {text})
                                 .then(res => {
                                     setToken(res.data.token);
                                     setLink(res.data.link);
